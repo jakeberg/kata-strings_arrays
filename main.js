@@ -69,42 +69,41 @@ printResult(lotrCitiesArray);
 
 // 12. Using slice, display the first 14 characters from bestThing
 
-let fourteen = noSpace.slice(0, 14);
-printResult(fourteen);
+printResult(noSpace.slice(0, 14));
 
 // 13. Using slice, display the last 12 characters from bestThing
 
-var lastTwelve = noSpace.slice(-14);
-printResult(lastTwelve);
-
+printResult(noSpace.slice(-14));
 
 // 14. Using slice, display characters between the 23rd and 38th position of bestThing (i.e., "boolean is even"
 
-
-let between = noSpace.slice(23, 39);
-printResult(between);
+printResult(noSpace.slice(23, 39));
 
 // 15. Repeat #13 using substring instead of slice.
 
-let lastTwelveSub = noSpace.substring(noSpace.length - 14);
-printResult(lastTwelveSub);
+printResult(noSpace.substring(noSpace.length - 14));
 
 // 16. Repeat #14 using substr instead of slice.
 
-let betweenSub = noSpace.substring(23, 39);
-printResult(betweenSub);
+
+printResult(noSpace.substring(23, 39));
 
 // 17. Find and display the index of "only" in bestThing
 
-let onlyIndex = bestThing.indexOf("only");
-printResult(onlyIndex);
+printResult(bestThing.indexOf("only"));
 
 // 18. Find and display the index of the last word in bestThing
 
-let lastIndex = bestThing.lastIndexOf("bit");
-printResult(lastIndex);
+printResult(bestThing.lastIndexOf("bit"));
 
 // 19. Find and display all cities from gotCitiesCSV  that use double vowels ("aa","ee", etc.)
+
+function dubVowels(){
+
+}
+
+// var newCities = vowels();
+// printResult(newCities);
 
 // 20. Find and display all cities from lotrCitiesArray that end with "or"
 
