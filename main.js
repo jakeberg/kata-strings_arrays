@@ -5,13 +5,14 @@ const bestThing = "The best thing about a boolean is even if you are wrong you a
 // List
 
 const destination = document.querySelector("main");
-
+const list = document.createElement("ol")
+destination.appendChild(list);
 
 // result is what will be written into the document
 function printResult(result) {
-    var newElement = document.createElement("div");
+    var newElement = document.createElement("li");
     newElement.textContent = JSON.stringify(result);
-    destination.appendChild(newElement);
+    list.appendChild(newElement);
 }
 
 
@@ -68,8 +69,7 @@ printResult(lotrCitiesArray);
 
 function fourteen(input) {
     let re = input.replace(/ /g, "");
-    let spli = re.split("");
-    let sli = spli.slice(0, 14);
+    let sli = re.slice(0, 14);
     return sli;
 }
 
@@ -81,8 +81,7 @@ printResult(fourteen(bestThing));
 
 function lastTwelve(input) {
     let re = input.replace(/ /g, "");
-    let spli = re.split("");
-    let sli = spli.slice(-14);
+    let sli = re.slice(-14);
     return sli;
 }
 
@@ -93,8 +92,7 @@ printResult(lastTwelve(bestThing));
 
 function between(input) {
     let re = input.replace(/ /g, "");
-    let spli = re.split("");
-    let sli = spli.slice(23, 39);
+    let sli = re.slice(23, 39);
     return sli;
 }
 
