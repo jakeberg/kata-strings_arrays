@@ -2,18 +2,21 @@ const gotCitiesCSV = "King's Landing,Braavos,Volantis,Old Valyria,Free Cities,Qa
 const lotrCitiesArray = ["Mordor", "Gondor", "Rohan", "Beleriand", "Mirkwood", "Dead Marshes", "Rhun", "Harad"];
 const bestThing = "The best thing about a boolean is even if you are wrong you are only off by a bit";
 
-// List
+// Creates a List
 
 const destination = document.querySelector("main");
 const list = document.createElement("ol")
 destination.appendChild(list);
 
-// result is what will be written into the document
 function printResult(result) {
     var newElement = document.createElement("li");
     newElement.textContent = JSON.stringify(result);
     list.appendChild(newElement);
 }
+
+
+// This gets the string bestThing ready by taking out the spaces.
+const noSpace = bestThing.replace(/ /g, "");
 
 
 // 1. Display an array from the cities in gotCitiesCSV
@@ -63,64 +66,43 @@ printResult(lotrCitiesArray);
 lotrCitiesArray.splice(5, 1, 'Deadest Marshes');
 printResult(lotrCitiesArray);
 
+
 // 12. Using slice, display the first 14 characters from bestThing
 
-
-
-function fourteen(input) {
-    let re = input.replace(/ /g, "");
-    let sli = re.slice(0, 14);
-    return sli;
-}
-
-printResult(fourteen(bestThing));
-
-
+let fourteen = noSpace.slice(0, 14);
+printResult(fourteen);
 
 // 13. Using slice, display the last 12 characters from bestThing
 
-function lastTwelve(input) {
-    let re = input.replace(/ /g, "");
-    let sli = re.slice(-14);
-    return sli;
-}
-
-printResult(lastTwelve(bestThing));
+var lastTwelve = noSpace.slice(-14);
+printResult(lastTwelve);
 
 
 // 14. Using slice, display characters between the 23rd and 38th position of bestThing (i.e., "boolean is even"
 
-function between(input) {
-    let re = input.replace(/ /g, "");
-    let sli = re.slice(23, 39);
-    return sli;
-}
 
-printResult(between(bestThing));
+let between = noSpace.slice(23, 39);
+printResult(between);
 
 // 15. Repeat #13 using substring instead of slice.
 
-function lastTwelveSub(input) {
-    let re = input.replace(/ /g, "");
-    let sli = re.substring(re.length - 14);
-    return sli;
-}
-
-printResult(lastTwelveSub(bestThing));
+let lastTwelveSub = noSpace.substring(noSpace.length - 14);
+printResult(lastTwelveSub);
 
 // 16. Repeat #14 using substr instead of slice.
 
-function betweenSub(input) {
-    let re = input.replace(/ /g, "");
-    let sli = re.substring(23, 39);
-    return sli;
-}
-
-printResult(betweenSub(bestThing));
+let betweenSub = noSpace.substring(23, 39);
+printResult(betweenSub);
 
 // 17. Find and display the index of "only" in bestThing
 
+let onlyIndex = bestThing.indexOf("only");
+printResult(onlyIndex);
+
 // 18. Find and display the index of the last word in bestThing
+
+let lastIndex = bestThing.lastIndexOf("bit");
+printResult(lastIndex);
 
 // 19. Find and display all cities from gotCitiesCSV  that use double vowels ("aa","ee", etc.)
 
