@@ -125,28 +125,72 @@ for (let i = 0; i < bestThingArray.length; i++) {
 
 // 22. Display "Yes" or "No" if lotrCitiesArray includes "Mirkwood"
 
+//too many results
+
 for (let i = 0; i < lotrCitiesArray.length; i++) {
-    if (lotrCitiesArray[i] === "Mirkwood") {
-        printResult("22. " + "Yes");
+    if (lotrCitiesArray[i].includes("Mirkwood") == true) {
+        printResult("22. " + "yes");
+    }else {
+        printResult("22. " + "No");
     }
 }
 
 // 23. Display "Yes" or "No" if lotrCitiesArray includes "Hollywood"
 
+// too many results
+
+for (let i = 0; i < lotrCitiesArray.length; i++) {
+    if (lotrCitiesArray[i].includes("Hollywood")) {
+        printResult("23. " + "Yes");
+    } else {
+        printResult("23. " + "No");
+    }
+}
+
 // 24. Display the index of "Mirkwood" in lotrCitiesArray
+
+printResult("24. " + lotrCitiesArray.indexOf("Mirkwood"));
 
 // 25. Find and display the first city in lotrCitiesArray that has more than one word
 
+// last occurance?
+
+for (let i = 0; i < lotrCitiesArray.length; i++) {
+    if (lotrCitiesArray[i].includes(" ")){
+        printResult("25. " + lotrCitiesArray[i]);
+    }
+}
+
 // 26. Reverse the order in lotrCitiesArray
+
+printResult("26. " + lotrCitiesArray.reverse());
 
 // 27. Sort lotrCitiesArray alphabetically
 
+printResult("27. " + lotrCitiesArray.sort());
+
 // 28. Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)
+
+printResult("28. Skipping for now.");
 
 // 29. Using pop, remove the last city from lotrCitiesArray
 
+printResult("29. " + lotrCitiesArray.pop());
+
 // 30. Using push, add back the city from lotrCitiesArray that was removed in #29 to the back of the array
+
+
+lotrCitiesArray.push("Rohan")
+printResult("30. " + lotrCitiesArray);
 
 // 31. Using shift, remove the first city from lotrCitiesArray
 
+printResult("31. " + lotrCitiesArray.shift());
+
 // 32. Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the
+
+lotrCitiesArray.unshift("Beleriand");
+printResult("32. " + lotrCitiesArray);
+
+
+
