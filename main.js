@@ -125,35 +125,21 @@ for (let i = 0; i < bestThingArray.length; i++) {
 
 // 22. Display "Yes" or "No" if lotrCitiesArray includes "Mirkwood"
 
-//too many results
-
-for (let i = 0; i < lotrCitiesArray.length; i++) {
-    if (lotrCitiesArray[i].includes("Mirkwood") == true) {
-        printResult("22. " + "yes");
-    }else {
-        printResult("22. " + "No");
+    if (lotrCitiesArray.includes("Mirkwood") == true) {
+        printResult("22. " + "Yes");
     }
-}
 
 // 23. Display "Yes" or "No" if lotrCitiesArray includes "Hollywood"
 
-// too many results
-
-for (let i = 0; i < lotrCitiesArray.length; i++) {
-    if (lotrCitiesArray[i].includes("Hollywood")) {
-        printResult("23. " + "Yes");
-    } else {
+    if (lotrCitiesArray.includes("Hollywood")  == false) {
         printResult("23. " + "No");
-    }
-}
+    } 
 
 // 24. Display the index of "Mirkwood" in lotrCitiesArray
 
 printResult("24. " + lotrCitiesArray.indexOf("Mirkwood"));
 
 // 25. Find and display the first city in lotrCitiesArray that has more than one word
-
-// last occurance?
 
 for (let i = 0; i < lotrCitiesArray.length; i++) {
     if (lotrCitiesArray[i].includes(" ")){
@@ -171,7 +157,9 @@ printResult("27. " + lotrCitiesArray.sort());
 
 // 28. Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)
 
-printResult("28. Skipping for now.");
+printResult("28. " + lotrCitiesArray.sort(function(a, b){
+   return a.length - b.length
+}));
 
 // 29. Using pop, remove the last city from lotrCitiesArray
 
