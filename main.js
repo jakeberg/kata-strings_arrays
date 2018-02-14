@@ -74,7 +74,7 @@ printResult("12. " + bestThing.slice(0, 14));
 
 // 13. Using slice, display the last 12 characters from bestThing
 
-printResult("13. " + bestThing.slice(-14));
+printResult("13. " + bestThing.slice(-12));
 
 // 14. Using slice, display characters between the 23rd and 38th position of bestThing (i.e., "boolean is even"
 
@@ -82,12 +82,11 @@ printResult("14. " + bestThing.slice(23, 39));
 
 // 15. Repeat #13 using substring instead of slice.
 
-printResult("15. " + bestThing.substring(bestThing.length - 14));
+printResult("15. " + bestThing.substring(bestThing.length - 12));
 
 // 16. Repeat #14 using substr instead of slice.
 
-
-printResult("16. " + bestThing.substring(23, 39));
+printResult("16. " + bestThing.substr(23, 15));
 
 // 17. Find and display the index of "only" in bestThing
 
