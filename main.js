@@ -8,12 +8,12 @@ const destination = document.querySelector("main");
 
 function printResult(result) {
     let newElement = document.createElement("div");
-    newElement.textContent = JSON.stringify(result);
+    newElement.textContent = result;
     destination.appendChild(newElement);
 }
 
 // This gets the string bestThing ready by taking out the spaces.
-const noSpace = bestThing.replace(/ /g, "");
+
 const bestThingArray = bestThing.split(" ")
 
 // This creates an array out of the gotCitiesCSV
@@ -26,7 +26,7 @@ printResult("1. " + gotCitiesCSV);
 
 // 2. Display an array of words from the sentence in bestThing
 
-printResult("2. " + bestThing.split(" "));
+printResult("2. " + JSON.stringify(bestThing.split(" ")));
 
 // 3. Display a string separated by semi-colons instead of commas from gotCitiesCSV
 
@@ -38,56 +38,56 @@ printResult("4. " + lotrCitiesArray.join(","));
 
 // 5. Display the first 5 cities in lotrCitiesArray
 
-printResult("5. " + lotrCitiesArray.slice(0, 5));
+printResult("5. " + JSON.stringify(lotrCitiesArray.slice(0, 5)));
 
 // 6. Display the last 5 cities in lotrCitiesArray
 
-printResult("6. " + lotrCitiesArray.slice(-5));
+printResult("6. " + JSON.stringify(lotrCitiesArray.slice(-5)));
 
 // 7. Display the 3rd to 5th city in lotrCitiesArray
 
-printResult("7. " + lotrCitiesArray.slice(3, 6));
+printResult("7. " + JSON.stringify(lotrCitiesArray.slice(3, 6)));
 // 8. Using splice, remove "Rohan" from lotrCitiesArray
 
 lotrCitiesArray.splice(2, 1)
-printResult("8. " + lotrCitiesArray);
+printResult("8. " + JSON.stringify(lotrCitiesArray));
 
 // 9. Using splice, remove all cities after "Dead Marshes" in lotrCitiesArray
 
 lotrCitiesArray.splice(5, 2)
-printResult("9. " + lotrCitiesArray);
+printResult("9. " + JSON.stringify(lotrCitiesArray));
 
 // 10. Using splice, add "Rohan" back to lotrCitiesArray right after "Gondor"
 
 lotrCitiesArray.splice(2, 0, 'Rohan');
-printResult("10. " + lotrCitiesArray);
+printResult("10. " + JSON.stringify(lotrCitiesArray));
 
 // 11. Using splice, rename "Dead Marshes" to "Deadest Marshes" in lotrCitiesArray
 
 lotrCitiesArray.splice(5, 1, 'Deadest Marshes');
-printResult("11. " + lotrCitiesArray);
+printResult("11. " + JSON.stringify(lotrCitiesArray));
 
 
 // 12. Using slice, display the first 14 characters from bestThing
 
-printResult("12. " + noSpace.slice(0, 14));
+printResult("12. " + bestThing.slice(0, 14));
 
 // 13. Using slice, display the last 12 characters from bestThing
 
-printResult("13. " + noSpace.slice(-14));
+printResult("13. " + bestThing.slice(-14));
 
 // 14. Using slice, display characters between the 23rd and 38th position of bestThing (i.e., "boolean is even"
 
-printResult("14. " + noSpace.slice(23, 39));
+printResult("14. " + bestThing.slice(23, 39));
 
 // 15. Repeat #13 using substring instead of slice.
 
-printResult("15. " + noSpace.substring(noSpace.length - 14));
+printResult("15. " + bestThing.substring(bestThing.length - 14));
 
 // 16. Repeat #14 using substr instead of slice.
 
 
-printResult("16. " + noSpace.substring(23, 39));
+printResult("16. " + bestThing.substring(23, 39));
 
 // 17. Find and display the index of "only" in bestThing
 
@@ -149,17 +149,17 @@ for (let i = 0; i < lotrCitiesArray.length; i++) {
 
 // 26. Reverse the order in lotrCitiesArray
 
-printResult("26. " + lotrCitiesArray.reverse());
+printResult("26. " + JSON.stringify(lotrCitiesArray.reverse()));
 
 // 27. Sort lotrCitiesArray alphabetically
 
-printResult("27. " + lotrCitiesArray.sort());
+printResult("27. " + JSON.stringify(lotrCitiesArray.sort()));
 
 // 28. Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)
 
-printResult("28. " + lotrCitiesArray.sort(function(a, b){
+printResult("28. " + JSON.stringify(lotrCitiesArray.sort(function(a, b){
    return a.length - b.length
-}));
+})));
 
 // 29. Using pop, remove the last city from lotrCitiesArray
 
@@ -169,16 +169,17 @@ printResult("29. " + lotrCitiesArray.pop());
 
 
 lotrCitiesArray.push("Rohan")
-printResult("30. " + lotrCitiesArray);
+printResult("30. " + JSON.stringify(lotrCitiesArray));
 
 // 31. Using shift, remove the first city from lotrCitiesArray
 
-printResult("31. " + lotrCitiesArray.shift());
+printResult("31. " + JSON.stringify(lotrCitiesArray.shift()));
 
 // 32. Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the
 
 lotrCitiesArray.unshift("Beleriand");
-printResult("32. " + lotrCitiesArray);
+printResult("32. " + JSON.stringify(lotrCitiesArray));
 
 
 
+// JSON.stringify can provide nice formatting for an array, but you need to call it directly on the array before prepending other strings (like the problem numbers). You are currently doing things like: JSON.stringify("2. " + bestThing.split(" ")) Instead, try: "2. " + JSON.stringify(bestThing.split(" ")) (This applies throughout, and will provide better output formatting for all your arrays)
